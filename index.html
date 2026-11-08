@@ -285,6 +285,16 @@ body{font-synthesis:none}
 .stamp .s{font-family:"Alfa Slab One";font-weight:400;border:0;background:var(--red)}
 .stamp .s2{font-family:Karla;font-weight:700;background:var(--ink)}
 .toast{font-family:"Alfa Slab One";font-weight:400;border:0;text-transform:none;background:var(--ink)}
+
+/* safe areas: colour bars run behind the status bar, no double bottom padding */
+.screen{padding-top:0!important;padding-bottom:0!important}
+#intro,#home,#win{padding-top:env(safe-area-inset-top)!important;padding-bottom:env(safe-area-inset-bottom)!important}
+.bar{padding-top:calc(env(safe-area-inset-top) + 8px)!important}
+#game .bar{padding-top:calc(env(safe-area-inset-top) + 3px)!important}
+#setup .scroll,#key .scroll,#rules .scroll{display:flex;flex-direction:column}
+#setup .wrap{display:flex;flex-direction:column;flex:1 0 auto;padding-bottom:calc(20px + env(safe-area-inset-bottom))}
+#setup .wrap>.stack{margin-top:auto;padding-top:24px}
+#key .wrap,#rules .wrap{padding-bottom:calc(24px + env(safe-area-inset-bottom))}
 </style>
 </head>
 <body>
